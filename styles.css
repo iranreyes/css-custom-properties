@@ -1,0 +1,19 @@
+:root {
+  --globalVar: 10px;
+}
+
+.enclosing {
+  --enclosingVar: 20px;
+}
+
+.enclosing .closure {
+  --closureVar: 30px;
+
+  font-size: calc(var(--closureVar) + var(--enclosingVar) + var(--globalVar)); /* 60px for now */
+}
+
+.enclosing .closure .way-depper {
+  --closureVar: 60px;
+
+  font-size: calc(var(--closureVar) + var(--enclosingVar) + var(--globalVar)); /* 60px for now */
+}
